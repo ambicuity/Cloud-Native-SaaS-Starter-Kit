@@ -8,10 +8,7 @@ class ApiService {
     this.baseUrl = config.apiBaseUrl;
   }
 
-  private async request<T>(
-    endpoint: string,
-    options?: RequestInit
-  ): Promise<ApiResponse<T>> {
+  private async request<T>(endpoint: string, options?: RequestInit): Promise<ApiResponse<T>> {
     const url = `${this.baseUrl}${endpoint}`;
 
     try {

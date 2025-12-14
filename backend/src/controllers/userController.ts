@@ -2,7 +2,7 @@ import { Request, Response, NextFunction } from 'express';
 import { userService } from '../services/userService';
 
 export class UserController {
-  async getAllUsers(req: Request, res: Response, next: NextFunction) {
+  async getAllUsers(_req: Request, res: Response, next: NextFunction) {
     try {
       const users = await userService.getAllUsers();
       res.status(200).json({

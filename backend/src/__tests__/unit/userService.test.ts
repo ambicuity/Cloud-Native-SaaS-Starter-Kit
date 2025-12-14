@@ -85,9 +85,9 @@ describe('UserService', () => {
     });
 
     it('should throw error for non-existent user', async () => {
-      await expect(
-        userService.updateUser('non-existent-id', { name: 'Test' })
-      ).rejects.toThrow(NotFoundError);
+      await expect(userService.updateUser('non-existent-id', { name: 'Test' })).rejects.toThrow(
+        NotFoundError
+      );
     });
 
     it('should throw error when updating to duplicate email', async () => {

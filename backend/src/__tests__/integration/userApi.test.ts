@@ -77,10 +77,7 @@ describe('User API Integration Tests', () => {
         name: 'Jane Doe',
       };
 
-      const response = await request(app)
-        .put(`/api/users/${user.id}`)
-        .send(updateData)
-        .expect(200);
+      const response = await request(app).put(`/api/users/${user.id}`).send(updateData).expect(200);
 
       expect(response.body.success).toBe(true);
       expect(response.body.data.name).toBe(updateData.name);

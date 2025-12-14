@@ -28,15 +28,12 @@ export const UserList = ({ users, onDelete }: UserListProps) => {
         </thead>
         <tbody>
           {users.map((user) => (
-            <tr key={user.id} style={styles.tr}>
+            <tr key={user.id}>
               <td style={styles.td}>{user.name}</td>
               <td style={styles.td}>{user.email}</td>
               <td style={styles.td}>{formatDateTime(user.createdAt)}</td>
               <td style={styles.td}>
-                <button
-                  onClick={() => onDelete(user.id)}
-                  style={styles.deleteButton}
-                >
+                <button onClick={() => onDelete(user.id)} style={styles.deleteButton}>
                   Delete
                 </button>
               </td>
@@ -69,11 +66,6 @@ const styles = {
   td: {
     padding: '12px',
     borderBottom: '1px solid #dee2e6',
-  },
-  tr: {
-    ':hover': {
-      backgroundColor: '#f8f9fa',
-    },
   },
   deleteButton: {
     padding: '6px 12px',
